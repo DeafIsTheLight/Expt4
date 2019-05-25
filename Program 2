@@ -1,0 +1,63 @@
+//Programme 2 - Bubbly Bubble Sort-y!
+//Create a C++ functional program that sorts n number of elements using either selection or bubble sort.
+
+//Programmer's Note: The system is a little cheated, mostly taken from the Bubble Sort lecture, so no fun. >-<'
+//So I decided to make this a little bit weird by changing names and stuff...and doing this. ^w^
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main()
+{
+	//Septarians = invasive forces. Archadians = defending forces. Xalax = Archadian commanders. Maximillian = Archadian Emperor.
+	
+	int xalax, maximillian, septarsis, chaosian;
+	cout << "Enter Septarians to be sent to invade: " << endl;
+	cin >> septarsis;
+	
+	int *archadians = new int[septarsis];
+	
+	cout << "\n=======================================================" << endl;
+	cout << "EMERGENCY! INVASION DETECTED! SEPTARIAN FLEETS INBOUND!" << endl;
+	cout << "=======================================================\n" << endl;
+	
+	cout << "Enter all " << septarsis << " sets of the Archadian forces necessary to combat the Septarians: " << endl;
+	for (xalax = 0; xalax < septarsis; xalax++)
+	{
+		cin >> archadians[xalax];
+	}
+	
+	for (xalax = 0; xalax < septarsis; xalax++)
+	{
+		cout << archadians[xalax] << " ";
+	}
+	
+	cout << "\n=======================================================" << endl;
+	cout << "\tASSEMBLE AND PREPARE FOR BATTLE!" << endl;
+	cout << "=======================================================\n" << endl;
+	
+	cout << "\n=======================================================" << endl;
+	
+	for (xalax = 0; xalax < septarsis; xalax++)
+	{
+		for (maximillian = 0; maximillian < septarsis - xalax - 1; maximillian++)
+		{
+			if (archadians[maximillian] > archadians[maximillian+1])
+			{
+				chaosian = archadians[maximillian];
+				archadians[maximillian] = archadians[maximillian+1];
+				archadians[maximillian+1] = chaosian;
+			}
+		}
+	}
+	
+	cout << "The assembled Archadian fleets order: " << endl;
+	for (xalax = 0; xalax < septarsis; xalax++)
+	{
+		cout << archadians[xalax] << ", ";
+	}
+	
+	cout << "\n=======================================================" << endl;
+	cout << "LAUNCHING ASSAULT...SUCCESSFUL. SEPTARIAN FLEETS RETREATING." << endl;
+	cout << "=======================================================\n" << endl;
+}
