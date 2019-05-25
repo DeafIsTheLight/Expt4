@@ -1,0 +1,96 @@
+//Programme 1
+//Write a C++ program using functions that will display the calculator menu. The program will prompt the user to choose the operation choice (from 1 to 5). Then it asks the user to input two integer values for the calculation.
+
+//Programmer's Note: The system is a little basic, I only went of Int over Float due to some compiler issues. >-<'
+#include <iostream>
+using namespace std;
+
+int sum(int a, int b)
+{
+	int c;
+	c = a + b;
+	return c;
+}
+
+int dif(int a, int b)
+{
+	int c;
+	c = a - b;
+	return c;
+}
+
+int pro(int a, int b)
+{
+	int c;
+	c = a * b;
+	return c;
+}
+
+int div(int a, int b)
+{
+	int c;
+	c = a / b;
+	return c;
+}
+
+int mod(int a, int b)
+{
+	int c;
+	c = a % b;
+	return c;
+}
+
+int main()
+{
+	int opta, x, y; //Options and variable inputs.
+	int vara, varb, varc, vard, vare; //Variables' outputs.
+	char optb; //Options that prompt yes or no.
+	
+	do{
+	cout << "Please enter the value of X: (preferrably larger than Y)" << "\n";
+	cin >> x;
+
+	cout << "Please enter the value of Y: (preferrably smaller than X)" << "\n";
+	cin >> y;
+
+	cout << "=======================================================" << endl;
+
+	cout << "Select the desired function: " << "\n";
+	cout << "\t" << "1. Addition" << "\n";
+	cout << "\t" << "2. Difference" << "\n";
+	cout << "\t" << "3. Product" << "\n";
+	cout << "\t" << "4. Division" << "\n";
+	cout << "\t" << "5. Modulo or Euclidean Division" << "\n";
+	cout << "=======================================================" << endl;
+	cin >> opta;
+
+	cout << "=======================================================" << endl;
+	
+	switch(opta){
+		case 1:
+			vara = sum(x,y);
+			cout << "Sum is: " << vara << "\n";
+			break; 
+		case 2:
+			varb = dif(x,y);
+			cout << "Difference is: " << varb << "\n";
+			break;
+		case 3:
+			varc = pro(x,y);
+			cout << "Product is: " << varc << "\n";
+			break;
+		case 4:
+			vard = div(x,y);
+			cout << "Quotient is: " << vard << "\n";
+			break;
+		case 5:
+			vare = mod(x,y);
+			cout << "Modulus is: " << vare << "\n";
+			break;
+	}
+	
+	cout << "Continue with next set of values (Y/N)?" << endl;
+    cin >> optb;
+	} while (optb == 'Y' || optb == 'y');
+	exit(0);
+}
